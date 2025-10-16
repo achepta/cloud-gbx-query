@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Amazon.Lambda.APIGatewayEvents" Version="2.7.1" />
+        <PackageReference Include="Amazon.Lambda.Core" Version="2.7.1" />
+        <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="2.2.4" />
+        <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.4.4" />
+        <PackageReference Include="GBX.NET" Version="2.2.2" />
+        <PackageReference Include="GBX.NET.LZO" Version="2.1.2" />
+        <PackageReference Include="GBX.NET.ZLib" Version="1.1.1" />
+        <PackageReference Include="GBX.NET.NewtonsoftJson" Version="1.0.3" />
+        <PackageReference Include="PartialObjectExtractor" Version="1.0.0" />
+        <PackageReference Include="TmEssentials" Version="2.5.2.0" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,50 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: CloudGbxQuery Lambda Function
+
+Globals:
+  Function:
+    Timeout: 30
+    MemorySize: 512
+    Runtime: dotnet8
+    Architectures:
+      - x86_64
+
+Resources:
+  CloudGbxQueryFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: CloudGbxQuery
+      Handler: CloudGbxQuery::CloudGbxQuery.Function::FunctionHandler
+      CodeUri: ./function.zip
+      ReservedConcurrentExecutions: 1
+      Events:
+        Root:
+          Type: Api
+          Properties:
+            Path: /
+            Method: ANY
+      Environment:
+        Variables:
+          DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: '1'
+      FunctionUrlConfig:
+        AuthType: NONE
+        Cors:
+          AllowOrigins:
+            - '*'
+          AllowMethods:
+            - GET
+            - POST
+          AllowHeaders:
+            - '*'
+          MaxAge: 300
+        InvokeMode: BUFFERED
+
+Outputs:
+  CloudGbxQueryFunctionUrl:
+    Description: "Function URL for CloudGbxQuery"
+    Value: !GetAtt CloudGbxQueryFunctionUrl.FunctionUrl
+  
+  CloudGbxQueryFunctionArn:
+    Description: "CloudGbxQuery Lambda Function ARN"
+    Value: !GetAtt CloudGbxQueryFunction.Arn

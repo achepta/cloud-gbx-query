@@ -1,0 +1,6 @@
+﻿.idea
+.aws-sam
+bin
+obj
+CloudGbxQuery.sln.DotSettings.user
+samconfig.toml
