@@ -20,7 +20,7 @@ significantly reducing response payload sizes.
 Query a GBX file from a URL using query parameters.
 
 ```bash
-GET https://function.url/?fields=%24.Ghosts%5B0%5D.Checkpoints%5B*%5D.Time&url=https%3A%2F%2Ftmnf.exchange%2Frecordgbx%2F12864099
+GET https://function.url/?fields=%24.Ghosts%5B0%5D.Checkpoints%5B*%5D.Time&url=https://github.com/achepta/cloud-gbx-query/raw/refs/heads/master/test-data/test.Replay.Gbx
 ```
 
 **Parameters:**
@@ -40,7 +40,7 @@ Content-Type: application/json
     "fields": [
         "$.Ghosts[0].Checkpoints[*].Time"
     ],
-    "url": "https://tmnf.exchange/recordgbx/12864099"
+    "url": "https://github.com/achepta/cloud-gbx-query/raw/refs/heads/master/test-data/test.Replay.Gbx"
 }
 ```
 
@@ -194,7 +194,7 @@ Then make requests to `http://localhost:3000`.
 
 ```bash
 # GET method
-curl "http://localhost:3000?url=https://tmnf.exchange/recordgbx/12864099&fields=%24.Ghosts%5B0%5D.Checkpoints%5B*%5D.Time"
+curl "http://localhost:3000?url=https://github.com/achepta/cloud-gbx-query/raw/refs/heads/master/test-data/test.Replay.Gbx&fields=%24.Ghosts%5B0%5D.Checkpoints%5B*%5D.Time"
 
 # POST with JSON
 curl -X POST http://localhost:3000 \
@@ -203,7 +203,7 @@ curl -X POST http://localhost:3000 \
     "fields": [
         "$.Ghosts[0].Checkpoints[*].Time"
     ],
-    "url": "https://tmnf.exchange/recordgbx/12864099"
+    "url": "https://github.com/achepta/cloud-gbx-query/raw/refs/heads/master/test-data/test.Replay.Gbx"
   }'
 
 # POST with file
